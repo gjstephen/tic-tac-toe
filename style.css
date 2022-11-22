@@ -1,0 +1,49 @@
+* {
+    box-sizing: border-box;
+    border: 1px solid red;
+}
+
+header {
+    text-align: center;
+}
+
+header h1 {
+    /* margin: 0 auto; */
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0.5rem;
+    width: fit-content;
+    margin: 0 auto;
+    border: 2px solid black;
+    padding: 0.2rem;
+}
+
+.grid-box {
+    width: 5rem;
+    height: 5rem;
+    background-color: blanchedalmond;
+    border: 1px solid black;
+}
+
+.naught-move {
+    background-image: url(./images/naught_img.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cross-move {
+    background-image: url(./images/cross_img.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.game-result {
+    margin: 0 auto;
+    width: fit-content
+}
