@@ -14,25 +14,59 @@
     </header>
 
     <main>
-        <section class="game-grid">
-            <div class="grid-box r1c1">1a</div>
-            <div class="grid-box r1c2">1b</div>
-            <div class="grid-box r1c3">1c</div>
-            <div class="grid-box r2c1">2a</div>
-            <div class="grid-box r2c2">2b</div>
-            <div class="grid-box r2c3">2c</div>
-            <div class="grid-box r3c1">3a</div>
-            <div class="grid-box r3c2">3b</div>
-            <div class="grid-box r3c3">3c</div>
-        </section>
+        <section class="player-one">
+            <div>
+                <input type="text" placeholder="Input player name" class="p1-name-input">
+                <button class="p1-name-btn">Update Name</button>
+            </div>
 
-        <section class="game-turn">
-            <p class="turn-display">Player Two's Turn</p>
+            <h3 class="p1-name-text">Player One</h3>
+            <p class="p1-score">Score: 0</p>
         </section>
 
         <section>
-            <h2 class="game-result">Who will win?</h2>
+            <section>
+                <h2 class="game-result">Who will win?</h2>
+                <h3>Round: <span class="round-tally">1</span></h3>
+            </section>
+
+            <section class="game-grid">
+                <div class="grid-box r1c1"></div>
+                <div class="grid-box r1c2"></div>
+                <div class="grid-box r1c3"></div>
+                <div class="grid-box r2c1"></div>
+                <div class="grid-box r2c2"></div>
+                <div class="grid-box r2c3"></div>
+                <div class="grid-box r3c1"></div>
+                <div class="grid-box r3c2"></div>
+                <div class="grid-box r3c3"></div>
+            </section>
+
+            <section class="game-turn">
+                <h2 class="turn-display">Player One's Turn</h2>
+
+                <div>
+                    <button class="reset-play">Reset Grid</button>
+                    <button class="new-game">New Game</button>
+                </div>
+            </section>
+        </section>
+
+        <section class="player-two">
+            <div>
+                <input type="text" placeholder="Input player name" class="p2-name-input">
+                <button class="p2-name-btn">Update Name</button>
+            </div>
+
+            <h3 class="p2-name-text">Player Two</h3>
+            <p>Score: <span class="p2-score">0</span></p>
         </section>
     </main>
+
+    <footer>
+        <section>
+            
+        </section>
+    </footer>
 </body>
 </html>

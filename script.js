@@ -1,37 +1,50 @@
-// create round & turn counter
-var counter = 1
+// global variables
+var turnCounter = 1
 var playerMove = 'naught-move'
+var pOneName = 'Player One'
+var pTwoName = 'Player Two'
+var winCondition = false
+var pOneScore = 0
+var pTwoScore = 0
+var roundTally = 1
 
+// global DOM variables
+var pOneScoreDisplay = document.querySelector('.p1-score')
+var pTwoScoreDisplay = document.querySelector('.p2-score')
+var gameGrid = document.querySelector('.game-grid')
+var gridBoxes = document.querySelectorAll('.grid-box')
+var resultMsg = document.querySelector('.game-result')
+var resetBtn = document.querySelector('.reset-play')
+var roundDisplay = document.querySelector('.round-tally')
+var newGameBtn = document.querySelector('.new-game')
 
 
 // create event listener for game-grid
-var gameGrid = document.querySelector('.game-grid')
 
 gameGrid.addEventListener('click', function (event) {
     var targetBox = event.target
-    // condition that box was clicked
-    if (targetBox.classList.contains('grid-box') === true) {
-        // check if grid is taken
-        if (freeSpace(targetBox) === false) {
-            // check who's turn
-            if (counter % 2 === 0) {
-                targetBox.classList.toggle('cross-move')
-                var moveSpace = targetBox.classList[1]
-                locationKey[moveSpace] = 'x'
 
-                counter += 1
-                checkWin()
-                playerMove = 'naught-move'
+    if (winCondition !== true) {
+        // condition that box was clicked
+        if (targetBox.classList.contains('grid-box') === true) {
+            // check if grid is taken
+            if (freeSpace(targetBox) === false) {
+                // check who's turn
+                if (turnCounter % 2 === 0) {
+                    targetBox.classList.toggle('cross-move')
+                    var moveSpace = targetBox.classList[1]
+                    checkWin()
+                    turnCounter += 1
+                    playerMove = 'naught-move'
 
-            } else {
-                targetBox.classList.toggle('naught-move')
-                var moveSpace = targetBox.classList[1]
-                locationKey[moveSpace] = 'o'
-                
-                counter += 1
-                checkWin()
-                playerMove = 'cross-move'
+                } else {
+                    targetBox.classList.toggle('naught-move')
+                    var moveSpace = targetBox.classList[1]
+                    checkWin()
+                    turnCounter += 1
+                    playerMove = 'cross-move'
 
+                }
             }
         }
     }
@@ -49,24 +62,19 @@ function freeSpace(target) {
 }
 
 // function to check if win
-var gridBoxes = document.querySelectorAll('.grid-box')
 
 //check horizontal win
 function horizontalWin() {
     for (var i = 0; i < 9; i = i + 3) {
         var winCounter = 0
-        // console.log(i)
         for (var gridIndex = i; gridIndex < 9; gridIndex++) {
             if (gridIndex < (i + 3)) {
-                // console.log(true)
                 if (gridBoxes[gridIndex].classList.contains(playerMove)) {
                     winCounter = winCounter + 1
                 }
-                // console.log(winCounter)
-                // console.log(gridBoxes[gridIndex])
             }
             if (winCounter === 3) {
-                console.log(`${playerMove} wins!`)
+                winCondition = true
             }
         }
     }
@@ -81,7 +89,7 @@ function verticalWin() {
                 winCounter = winCounter + 1
             }
             if (winCounter === 3) {
-                console.log(`${playerMove} wins!`)
+                winCondition = true
             }
         }
     }
@@ -89,84 +97,105 @@ function verticalWin() {
 
 // check diagonal win
 function diagonalWin() {
-    // for (var i = 0; i < 3; i = i + 2) {
-    //     for (var gridIndex = i; gridIndex < 10; gridIndex + 4) {
-    //         if (gridBoxes[gridIndex].classList.contains(playerMove)) {
-    //             winCounter = winCounter + 1
-    //         }
-    //         if (winCounter = 3) {
-    //             `${playerMove} wins!`
-    //         }
-    //     }
-    // }
+    var winCounter = 0
+    for (var i = 0; i < 9; i = i + 4) {
+        if (gridBoxes[i].classList.contains(playerMove)) {
+            winCounter = winCounter + 1
+        }
+        if (winCounter === 3) {
+            winCondition = true
+        }
+    }
+    var winCounter = 0
+    for (var i = 2; i < 9; i = i + 2) {
+        if (gridBoxes[i].classList.contains(playerMove)) {
+            winCounter = winCounter + 1
+        }
+        if (winCounter === 3) {
+            winCondition = true
+        }
+    }
+    
 }
 
 function checkWin() {
     horizontalWin()
     verticalWin()
-    // diagonalWin()
+    diagonalWin()
+    if (winCondition === true) {
+        if (turnCounter % 2 === 0) {
+            resultMsg.textContent = `${pTwoName} wins!`
+            pTwoScore = pTwoScore + 1
+            console.log(pTwoScore)
+            pTwoScoreDisplay.textContent = `Score: ${pTwoScore}` 
+        } else {
+            resultMsg.textContent = `${pOneName} wins!`
+            pOneScore = pOneScore + 1
+            console.log(pOneScore)
+            pOneScoreDisplay.textContent = `Score: ${pOneScore}`
+        }
+        
+    }
 }
 
+// eventListener to reset game-grid
+resetBtn.addEventListener('click', function (event) {
+    for (var i = 0; i < 9; i++) {
+        gridBoxes[i].classList.remove('cross-move')
+        gridBoxes[i].classList.remove('naught-move')
+    }
+    if (turnCounter > 1) {
+        turnCounter = 1
+        playerMove = 'naught-move'
+        winCondition = false
+        resultMsg.textContent = 'Who will win?'
+        roundTally = roundTally + 1
+        roundDisplay.textContent = roundTally
+    }
+    // console.log
+})
 
+// eventListener to for new game
+newGameBtn.addEventListener('click', function (event) {
+    for (var i = 0; i < 9; i++) {
+        gridBoxes[i].classList.remove('cross-move')
+        gridBoxes[i].classList.remove('naught-move')
+    }
+    turnCounter = 1
+    playerMove = 'naught-move'
+    winCondition = false
+    resultMsg.textContent = 'Who will win?'
+    roundTally = 1
+    roundDisplay.textContent = roundTally
 
-// var locationKey = {
-//     r1c1: document.querySelector('.r1c1'),
-//     r1c2: document.querySelector('.r1c2'),
-//     r1c3: document.querySelector('.r1c3'),
-//     r2c1: document.querySelector('.r2c1'),
-//     r2c2: document.querySelector('.r2c2'),
-//     r2c3: document.querySelector('.r2c3'),
-//     r3c1: document.querySelector('.r3c1'),
-//     r3c2: document.querySelector('.r3c2'),
-//     r3c3: document.querySelector('.r3c3'),
-// }
+    pOneScore = 0
+    pOneScoreDisplay.textContent = `Score: ${pOneScore}`
+    pTwoScore = 0
+    pTwoScoreDisplay = `Score: ${pTwoScore}`
+    pOneName = 'Player One'
+    oneNameText.textContent = pOneName
+    pTwoName = 'Player Two'
+    twoNameText.textContent = pTwoName
+    // console.log
+})
 
-var locationKey = {
-    r1c1: '-',
-    r1c2: '-',
-    r1c3: '-',
-    r2c1: '-',
-    r2c2: '-',
-    r2c3: '-',
-    r3c1: '-',
-    r3c2: '-',
-    r3c3: '-',
-}
+// change player1 name
+var oneNameInput = document.querySelector('.p1-name-input')
+var oneNameBtn = document.querySelector('.p1-name-btn')
+var oneNameText = document.querySelector('.p1-name-text')
+oneNameBtn.addEventListener('click', function (event) {
+    if (oneNameInput.value.length > 0) {
+        oneNameText.textContent = oneNameInput.value
+        oneNameInput.value = ''
+    }
+})
 
-// var locationKey = {
-//     r1c1: [document.querySelector('.r1c1'), null],
-//     r1c2: [document.querySelector('.r1c2'), null],
-//     r1c3: [document.querySelector('.r1c3'), null],
-//     r2c1: [document.querySelector('.r2c1'), null],
-//     r2c2: [document.querySelector('.r2c2'), null],
-//     r2c3: [document.querySelector('.r2c3'), null],
-//     r3c1: [document.querySelector('.r3c1'), null],
-//     r3c2: [document.querySelector('.r3c2'), null],
-//     r3c3: [document.querySelector('.r3c3'), null],
-// }
-
-// function checkWin() {
-//     if (counter % 2 === 0) {
-//         var winner = 'Player One'
-//     } else {
-//         var winner = 'Player Two'
-//     }
-
-//     if ((locationKey.r1c1 === locationKey.r1c2) && (locationKey.r1c1 === locationKey.r1c3)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r2c1 === locationKey.r2c2) && (locationKey.r2c1 === locationKey.r2c3)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r3c1 === locationKey.r3c2) && (locationKey.r3c1 === locationKey.r3c3)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r1c1 === locationKey.r2c1) && (locationKey.r1c1 === locationKey.r3c1)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r1c2 === locationKey.r2c2) && (locationKey.r1c2 === locationKey.r3c2)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r1c3 === locationKey.r2c3) && (locationKey.r1c3 === locationKey.r3c3)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r1c1 === locationKey.r2c2) && (locationKey.r1c1 === locationKey.r3c3)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }  else if ((locationKey.r1c3 === locationKey.r2c2) && (locationKey.r1c3 === locationKey.r3c1)) {
-//         document.querySelector('.game-result').textContent = `${winner} wins!`
-//     }
-// }
+var twoNameInput = document.querySelector('.p2-name-input')
+var twoNameBtn = document.querySelector('.p2-name-btn')
+var twoNameText = document.querySelector('.p2-name-text')
+twoNameBtn.addEventListener('click', function (event) {
+    if (twoNameInput.value.length > 0) {
+        twoNameText.textContent = twoNameInput.value
+        twoNameInput.value = ''
+    }
+})
