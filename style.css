@@ -41,8 +41,8 @@ main {
 }
 
 .grid-box {
-    width: 5rem;
-    height: 5rem;
+    width: 8rem;
+    height: 8rem;
     background-color: blanchedalmond;
     border: 1px solid black;
 }
@@ -58,7 +58,15 @@ main {
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
+    content: 'yes';
 }
+
+/* .naught-move.r1c1{
+    background-image: url(./images/cross_img.png);
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+} */
 
 .cross-move {
     background-image: url(./images/cross_img.png);
@@ -74,4 +82,45 @@ main {
 .game-result {
     margin: 2rem auto;
     width: fit-content
+}
+
+
+/* .greeting::after {
+    content: '';
+    background-color: rgba(0, 0, 0, 0.171);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    text-align: center;
+} */
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.763);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    margin: 0 auto;
+    padding: auto;
+    align-content: center;
+    text-align: center;
+    color: white;
+}
+
+.overlay.overlay-fade {
+    animation: fadeOut 4s forwards;
+    -webkit-animation: fadeOut 2s forwards;
+    -moz-animation: fadeOut 2s forwards;
+    -o-animation: fadeOut 2s forwards;
+    -ms-animation: fadeOut 2s forwards;
+  }
+  
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        /* display: none; */
+    }
 }

@@ -220,3 +220,24 @@ twoNameBtn.addEventListener('click', function (event) {
         twoNameInput.value = ''
     }
 })
+
+
+// remove overlay
+var dropDownBtn = document.querySelector('.dropdown-button')
+var overlay = document.querySelector('.overlay')
+dropDownBtn.addEventListener('click', function (event) {
+    // overlay.classList.toggle('overlay-fade')
+    overlay.style.display = 'none'
+})
+
+var spartaOption = document.querySelector('.sparta-option')
+spartaOption.addEventListener('click', function (event) {
+    document.querySelector('.title').textContent = 'The Peloponnesian War'
+
+    document.querySelector('body').classList.toggle('sparta')
+    document.querySelector('.title').classList.toggle('sparta')
+    document.querySelector('.game-grid').classList.toggle('sparta')
+    for (var i = 0; i < gridBoxes.length; i++) {
+        gridBoxes[i].classList.toggle('sparta')
+    }
+})
