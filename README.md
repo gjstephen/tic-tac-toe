@@ -1,30 +1,29 @@
 # tic-tac-toe
-The briefest description of my cool project and why you should all use it.
+This is my version of the age-old game of: tic tac toe.
 
 # :computer: [Click here](https://gjstephen.github.io/tic-tac-toe/) to see my live project!
 
 # :page_facing_up: About
-- How to use my awesome project
-- Download instructions (if relevant):
+How to play:
+- naughts always goes first
+- click on whichever grid box you would like for your move
+- you cannot claim a box that your opponent already has
+- you will win if you have 3 tiles in a row
 
-```
-$ git clone my-awesome-app
-$ cd my-awesome-app
-$ node app.js
-```
-- Add in-app screenshots
+- to play another round, hit the 'Next Round' button
+- to reset the game, hit the 'New Game' button
+- You can customize your player name if you wish
 
 # :pencil2: Planning & Problem Solving
-- Talk about approach to the problem.
-- Add screenshots/drawings of doodles/plans during the planning phase.
-- Flow charts of app logic.
-![glow chart of logic](/assets/images/project_plan.PNG)
+- I started by roughly drawing up the page layout 
+- Then I design the game logic, by running through what a turn looks like
+- The page was built in the order of the game logic 
+
+![glow chart of logic](/images/project_plan.PNG)
 
 # :rocket: Cool Tech
-- Programming languages
-- Libraries
-- Animations
-- Anything else you'd be proud to show your parents
+- HTML, CSS, JS
+- DOM manipulation to alter web page
 
 # :scream: Bugs to fix :poop:
 - Anything a little broken
