@@ -18,7 +18,7 @@ $ node app.js
 - Talk about approach to the problem.
 - Add screenshots/drawings of doodles/plans during the planning phase.
 - Flow charts of app logic.
-![glow chart of logic](/images/project_plan.PNG)
+![glow chart of logic](/assets/images/project_plan.PNG)
 
 # :rocket: Cool Tech
 - Programming languages
