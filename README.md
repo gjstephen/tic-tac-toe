@@ -1,7 +1,7 @@
 # tic-tac-toe
 The briefest description of my cool project and why you should all use it.
 
-# :computer: [Click here](https://www.youtube.com/watch?v=dQw4w9WgXcQ) to see my live project!
+# :computer: [Click here](https://gjstephen.github.io/tic-tac-toe/) to see my live project!
 
 # :page_facing_up: About
 - How to use my awesome project
