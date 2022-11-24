@@ -38,3 +38,5 @@ What I would do differently if I could wind back the clock...
 - add media queries to reformat the page on different browser sizes
 - add audio clips to play on rounds run
 - perhaps add some transitions/animations
+- add lines to show how a player won
+- swap starting player between each round
