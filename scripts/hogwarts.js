@@ -39,7 +39,12 @@ function hogwartsClassToggle() {
 var classesArray = ['.title', '.game-grid', '.p1-name-btn', '.p2-name-btn', '.d-one-options', '.d-two-options']
 
 function hogwartsTextContent() {
-    document.querySelector('.title').textContent = 'Harry Potter \n and the Game of Tic Tac Toe'
+    document.querySelector('.title').textContent = 'Harry Potter  '
+    var subTitle = document.createElement('span')
+    subTitle.textContent =  'and the Game of Tic Tac Toe'
+    subTitle.classList.add('sub-title')
+    subTitle.classList.add('hogwarts')
+    document.querySelector('.title').append(subTitle)
 
     pOneName = 'Harry Potter'
     oneNameText.textContent = pOneName
@@ -57,10 +62,10 @@ function hogwartsTextContent() {
 
 function hogwartsImages() {
     var picOne = document.createElement('img')
-    picOne.src = '../images/harry-potter-image.png'
+    picOne.src = './images/harry-potter-image.png'
     document.querySelector('.player-one').append(picOne)
     
     var picTwo = document.createElement('img')
-    picTwo.src = '../images/voldemort-image.png'
+    picTwo.src = './images/voldemort-image.png'
     document.querySelector('.player-two').append(picTwo)
 }

@@ -23,6 +23,9 @@ body.hogwarts {
 
 }
 
+.sub-title.hogwarts {
+    font-size: 2.5rem;;
+}
 
 .player-one.hogwarts img,
 .player-two.hogwarts img {

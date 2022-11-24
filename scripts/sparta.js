@@ -82,18 +82,18 @@ dTwoMenu.addEventListener('click', function (event) {
 
 function spartaImages() {
     var picOne = document.createElement('img')
-    picOne.src = '../images/laurel-wreath.png'
+    picOne.src = './images/laurel-wreath.png'
     document.querySelector('.header-image-a').appendChild(picOne)
 
     var picOne = document.createElement('img')
-    picOne.src = '../images/evil-eye.png'
+    picOne.src = './images/evil-eye.png'
     document.querySelector('.header-image-a').appendChild(picOne)
     
     var picTwo = document.createElement('img')
-    picTwo.src = '../images/evil-eye.png'
+    picTwo.src = './images/evil-eye.png'
     document.querySelector('.header-image-b').appendChild(picTwo)
 
     var picTwo = document.createElement('img')
-    picTwo.src = '../images/laurel-wreath.png'
+    picTwo.src = './images/laurel-wreath.png'
     document.querySelector('.header-image-b').appendChild(picTwo)
 }
