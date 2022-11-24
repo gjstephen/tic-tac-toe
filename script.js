@@ -195,9 +195,17 @@ newGameBtn.addEventListener('click', function (event) {
     pOneScoreDisplay.textContent = `Score: ${pOneScore}`
     pTwoScore = 0
     pTwoScoreDisplay.textContent = `Score: ${pTwoScore}`
-    pOneName = 'Player One'
+    if (document.querySelector('body').classList.contains('sparta')) {
+        pOneName = 'Spartan Soldier'
+        pTwoName = 'Athenian Soldier'
+    } else if (document.querySelector('body').classList.contains('hogwarts')) {
+        pOneName = 'Harry Potter'
+        pTwoName = 'Lord Voldemort'
+    } else {
+        pOneName = 'Player One'
+        pTwoName = 'Player Two'
+    }
     oneNameText.textContent = pOneName
-    pTwoName = 'Player Two'
     twoNameText.textContent = pTwoName
     resultMsg.textContent = `${pOneName}'s Turn`
 })

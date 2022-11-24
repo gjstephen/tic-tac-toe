@@ -48,6 +48,13 @@ function spartaNames() {
     twoNameInput.style.display = 'none'
     twoNameBtn.textContent = 'Choose a name'
 
+    pOneName = 'Spartan Soldier'
+    oneNameText.textContent = pOneName
+    pTwoName = 'Athenian Soldier'
+    twoNameText.textContent = pTwoName
+    turnDisplay.textContent = `${pOneName}'s Turn`
+
+
     for (var i = 0; i < namesList.sparta.length; i++) {
        var name = document.createElement('p')
        name.textContent = namesList.sparta[i]
