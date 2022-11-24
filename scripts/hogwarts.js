@@ -1,70 +1,70 @@
 // DOM variables
-var spartaOption = document.querySelector('.sparta-option')
+var hogwartsOption = document.querySelector('.hogwarts-option')
 var dOneMenu = document.querySelector('.d-one-menu')
 var dTwoMenu = document.querySelector('.d-two-menu')
 
-// sparta theme event listener
-spartaOption.addEventListener('click', function (event) {
-    spartaTextContent()
-    spartaClassToggle()
-    spartaNames()
-    spartaImages()
+// hogwarts theme event listener
+hogwartsOption.addEventListener('click', function (event) {
+    hogwartsTextContent()
+    hogwartsClassToggle()
+    hogwartsNames()
+    hogwartsImages()
 })
 
-function spartaClassToggle() {
+function hogwartsClassToggle() {
     for (var i = 0; i < gridBoxes.length; i++) {
-        gridBoxes[i].classList.toggle('sparta')
+        gridBoxes[i].classList.toggle('hogwarts')
     }
 
-    document.querySelector('body').classList.toggle('sparta')
-    document.querySelector('.title').classList.toggle('sparta')
-    document.querySelector('.game-grid').classList.toggle('sparta')
-    document.querySelector('.p1-name-btn').classList.toggle('sparta')
-    document.querySelector('.p2-name-btn').classList.toggle('sparta')
-    document.querySelector('.header-image-a').classList.toggle('sparta')
-    document.querySelector('.header-image-b').classList.toggle('sparta')
-    document.querySelector('.dropdown-one').classList.toggle('sparta')
-    document.querySelector('.dropdown-two').classList.toggle('sparta')
-    dOneMenu.classList.toggle('sparta')
+    document.querySelector('body').classList.toggle('hogwarts')
+    document.querySelector('.title').classList.toggle('hogwarts')
+    document.querySelector('.game-grid').classList.toggle('hogwarts')
+    document.querySelector('.p1-name-btn').classList.toggle('hogwarts')
+    document.querySelector('.p2-name-btn').classList.toggle('hogwarts')
+    document.querySelector('.header-image-a').classList.toggle('hogwarts')
+    document.querySelector('.header-image-b').classList.toggle('hogwarts')
+    document.querySelector('.dropdown-one').classList.toggle('hogwarts')
+    document.querySelector('.dropdown-two').classList.toggle('hogwarts')
+    dOneMenu.classList.toggle('hogwarts')
 }
 
 var classesArray = ['.title', '.game-grid', '.p1-name-btn', '.p2-name-btn', '.d-one-options', '.d-two-options']
 
-function spartaTextContent() {
-document.querySelector('.title').textContent = 'The Peloponnesian War'
+function hogwartsTextContent() {
+document.querySelector('.title').textContent = 'Harry Potter and the Game of Tic Tac Toe'
 }
 
 // var oneNameInput = document.querySelector('.p1-name-input')
 // var oneNameBtn = document.querySelector('.p1-name-btn')
 // var oneNameText = document.querySelector('.p1-name-text')
 var namesList = {
-    sparta: ['Menaleus', 'Leonidas', 'Arachidamia', 'Brasidas'],
+    hogwarts: ['Menaleus', 'Leonidas', 'Arachidamia', 'Brasidas'],
     athens: ['Socrates', 'Alcibiades', 'Pericles', 'Thucydides']
 }
 
-function spartaNames() {
+function hogwartsNames() {
     oneNameInput.style.display = 'none'
     oneNameBtn.textContent = 'Choose a name'
     twoNameInput.style.display = 'none'
     twoNameBtn.textContent = 'Choose a name'
 
-    for (var i = 0; i < namesList.sparta.length; i++) {
+    for (var i = 0; i < namesList.hogwarts.length; i++) {
        var name = document.createElement('p')
-       name.textContent = namesList.sparta[i]
-       name.classList.toggle('sparta')
+       name.textContent = namesList.hogwarts[i]
+       name.classList.toggle('hogwarts')
        name.classList.toggle('d-one-options')
        dOneMenu.appendChild(name)
     }
     for (var i = 0; i < namesList.athens.length; i++) {
         var name = document.createElement('p')
         name.textContent = namesList.athens[i]
-        name.classList.toggle('sparta')
+        name.classList.toggle('hogwarts')
         name.classList.toggle('d-two-options')
         dTwoMenu.appendChild(name)
 }
 }
 
-// sparta name change event listener
+// hogwarts name change event listener
 dOneMenu.addEventListener('click', function (event) {
     var target = event.target
     oneNameText.textContent = target.textContent
@@ -80,20 +80,21 @@ dTwoMenu.addEventListener('click', function (event) {
 
 })
 
-function spartaImages() {
+function hogwartsImages() {
     var picOne = document.createElement('img')
-    picOne.src = '/images/laurel-wreath.png'
+    picOne.src = '../images/laurel-wreath.png'
     document.querySelector('.header-image-a').appendChild(picOne)
 
     var picOne = document.createElement('img')
-    picOne.src = '/images/evil-eye.png'
+    picOne.src = '../images/evil-eye.png'
     document.querySelector('.header-image-a').appendChild(picOne)
     
     var picTwo = document.createElement('img')
-    picTwo.src = '/images/evil-eye.png'
+    picTwo.src = '../images/evil-eye.png'
     document.querySelector('.header-image-b').appendChild(picTwo)
 
     var picTwo = document.createElement('img')
-    picTwo.src = '/images/laurel-wreath.png'
+    picTwo.src = '../images/laurel-wreath.png'
     document.querySelector('.header-image-b').appendChild(picTwo)
 }
+

@@ -1,0 +1,180 @@
+body.hogwarts {
+    background-color: #F7F7F7;
+    margin: 0;
+    font-family: 'harry_pregular';
+}
+
+.title.hogwarts {
+    font-size: 4rem;
+}
+
+.header-image-a.hogwarts,
+.header-image-b.hogwarts{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+    gap: 0.4rem;
+    height: 100%;
+    max-height: 11rem;
+    max-width: 21rem;
+}
+
+.header-image-a.hogwarts img,
+.header-image-b.hogwarts img{
+    width: 100%;
+    /* height: 100%; */
+    display: inline;
+    margin: auto;
+    /* margin: auto 0 auto auto; */
+    justify-content: space-around;
+    
+}
+/* 
+.header-image-b.hogwarts img{
+    width: 60%;
+} */
+
+.game-grid.hogwarts {
+    background-image: url(../images/parchment_backgrounda.png);
+    /* background-color: red; */
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    border: none;
+    padding: 1.5rem;
+    gap: 0;
+}
+
+.grid-box.hogwarts {
+    width: 8rem;
+    height: 8rem;
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 1px dashed rgb(70, 50, 20);
+    /* border: none; */
+}
+
+.grid-box.hogwarts:nth-child(-n+3) {
+    border-top: none;
+}
+.grid-box.hogwarts:nth-child(3n+1) {
+    border-left: none;
+}
+.grid-box.hogwarts:nth-child(3n) {
+    border-right: none;
+}
+.grid-box.hogwarts:nth-child(n+7) {
+    border-bottom: none;
+}
+
+.naught-move.hogwarts {
+    background-image: url(/images/HP-scar.png);
+    background-color: #E50032;
+    background-size: 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.cross-move.hogwarts {
+    background-image: url(/images/death-eatersymbol.png);
+    background-color: #007A44;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.p1-name-btn.hogwarts,
+.p2-name-btn.hogwarts {
+    background-color: rgb(97, 166, 239);
+    border: none;
+    border-radius: 5px;
+    height: 2rem;
+}
+
+.p1-name-btn.hogwarts {
+    background-color: rgb(221, 91, 91);
+}
+
+.p2-name-btn.hogwarts {
+    background-color: rgb(97, 166, 239);
+}
+
+.dropdown-one.hogwarts,
+.dropdown-two.hogwarts {
+    width: fit-content;
+    /* text-align: center;
+    justify-content: center; */
+    margin: auto;
+    width: 10rem;
+    background-color: #F7F7F7;
+}
+
+.dropdown-two:hover .p2-name-btn.hogwarts{
+    background-color: rgba(50, 92, 133, 0.616);
+}
+
+.dropdown-one:hover .p1-name-btn.hogwarts{
+    background-color: rgba(196, 58, 58, 0.616);
+}
+
+.d-one-menu,
+.d-two-menu {
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+    /* min-width: 4rem; */
+    margin: 0 auto;
+    justify-content: center;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+    width: inherit ;
+}
+
+.dropdown-one:hover .d-one-menu,
+.dropdown-two:hover .d-two-menu{
+    /* display: block; */
+    /* display: flex; */
+    visibility: visible;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.2rem;
+    /* margin: 0 auto; */
+}
+
+.d-one-options.hogwarts {
+    background-color: rgb(221, 85, 85);
+}
+
+.d-two-options.hogwarts {
+    background-color: rgb(121, 181, 247);
+}
+.d-one-options.hogwarts,
+.d-two-options.hogwarts {
+    display: block;
+    /* position: relative; */
+    border-radius: 5px;
+    height: 2rem;
+    margin: 2px;
+}
+
+.d-one-options.hogwarts:hover {
+    background-color: rgb(198, 47, 47);
+}
+
+.d-two-options.hogwarts:hover {
+    background-color: rgb(81, 160, 244);
+}
+
+.p1-name-btn.hogwarts:hover .d-one-options.hogwarts,
+.p2-name-btn.hogwarts:hover .d-two-options.hogwarts{
+    display: block;
+}
+
+@font-face {
+    font-family: 'harry_pregular';
+    src: url('/fonts/webfontkit-harry-potter/harryp__-webfont.woff2') format('woff2'),
+         url('/fonts/webfontkit-harry-potter/harryp__-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
