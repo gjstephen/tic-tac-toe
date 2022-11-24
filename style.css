@@ -9,24 +9,49 @@ body {
 }
 
 header {
-    display: flex;
-    height: 8rem;
+    display: grid;
+    grid-template-columns: 1fr 2.5fr 1fr;
+    /* justify-content: center; */
+    min-height: 8rem;
+    max-height: 11rem;
+    height: fit-content;
     background: lightskyblue;
+    /* text-align: center; */
 }
 
 header h1 {
     margin: auto;
     width: fit-content;
+    font-size: 4rem;
 }
 
 main {
     display: flex;
-    margin: 0 auto;
-    /* margin-top: 3rem; */
     text-align: center;
     justify-content: space-around;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 0 auto;
+    /* margin-top: 3rem; */
     align-items: center;
     max-width: 1200px;
+}
+
+.player-areas {
+    display: grid;
+    grid-template-rows: 2fr 1fr 2fr;
+}
+
+.d-one-options {
+    display: none;
+}
+
+.dropdown-one {
+    background-color: rgb(178, 224, 253);
+}
+
+.player-names {
+    font-size: 2rem;
 }
 
 .game-grid {
@@ -61,13 +86,6 @@ main {
     content: 'yes';
 }
 
-/* .naught-move.r1c1{
-    background-image: url(./images/cross_img.png);
-    background-size: 80%;
-    background-position: center;
-    background-repeat: no-repeat;
-} */
-
 .cross-move {
     background-image: url(./images/cross_img.png);
     background-size: 80%;
@@ -77,12 +95,23 @@ main {
 
 .turn-display {
     margin: 2rem auto;
+    font-size: 2rem;
 }
 
+.round-display {
+    font-size: 1.5rem;
+}
+
+.scores {
+    font-size: 1.5rem;
+}
+/* 
 .game-result {
     margin: 2rem auto;
     width: fit-content
-}
+} */
+
+/* buttons */
 
 
 /* .greeting::after {
@@ -96,7 +125,7 @@ main {
 } */
 
 .overlay {
-    background-color: rgba(0, 0, 0, 0.763);
+    background-color: rgba(0, 0, 0, 0.893);
     width: 100%;
     height: 100%;
     position: absolute;

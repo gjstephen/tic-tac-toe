@@ -49,7 +49,7 @@ gameGrid.addEventListener('click', function (event) {
                         turnDisplay.textContent = `${pTwoName}'s Turn`
                         checkWin()
                         turnCounter += 1
-                        if (turnCounter === 10) {
+                        if (turnCounter === 10 && winCondition !== true) {
                             turnDisplay.textContent = `Game Over`
                             resultMsg.textContent = `Its a tie!`
                         } else {
@@ -146,13 +146,13 @@ function checkWin() {
             pTwoScore = pTwoScore + 1
             // console.log(pTwoScore)
             pTwoScoreDisplay.textContent = `Score: ${pTwoScore}` 
-            turnDisplay.textContent = `Game Over`
+            // turnDisplay.textContent = `Game Over`
         } else {
             resultMsg.textContent = `${pOneName} wins!`
             pOneScore = pOneScore + 1
             // console.log(pOneScore)
             pOneScoreDisplay.textContent = `Score: ${pOneScore}`
-            turnDisplay.textContent = `Game Over`
+            // turnDisplay.textContent = `Game Over`
         }
     }
 }
@@ -167,7 +167,7 @@ resetBtn.addEventListener('click', function (event) {
         turnCounter = 1
         playerMove = 'naught-move'
         winCondition = false
-        resultMsg.textContent = 'Who will win?'
+        resultMsg.textContent = `${pOneName}'s Turn`
         roundTally = roundTally + 1
         roundDisplay.textContent = roundTally
     }
@@ -183,9 +183,13 @@ newGameBtn.addEventListener('click', function (event) {
     turnCounter = 1
     playerMove = 'naught-move'
     winCondition = false
-    resultMsg.textContent = 'Who will win?'
     roundTally = 1
     roundDisplay.textContent = roundTally
+    
+    oneNameInput.style.display = 'inline'
+    oneNameBtn.style.display = 'inline'
+    twoNameInput.style.display = 'inline'
+    twoNameBtn.style.display = 'inline'
 
     pOneScore = 0
     pOneScoreDisplay.textContent = `Score: ${pOneScore}`
@@ -195,6 +199,7 @@ newGameBtn.addEventListener('click', function (event) {
     oneNameText.textContent = pOneName
     pTwoName = 'Player Two'
     twoNameText.textContent = pTwoName
+    resultMsg.textContent = `${pOneName}'s Turn`
 })
 
 // change player1 name
@@ -207,6 +212,8 @@ oneNameBtn.addEventListener('click', function (event) {
         oneNameText.textContent = pOneName
         oneNameInput.value = ''
         turnDisplay.textContent = `${pOneName}'s Turn`
+        oneNameInput.style.display = 'none'
+        oneNameBtn.style.display = 'none'
     }
 })
 
@@ -217,27 +224,45 @@ twoNameBtn.addEventListener('click', function (event) {
     if (twoNameInput.value.length > 0) {
         pTwoName = twoNameInput.value
         twoNameText.textContent = pTwoName
-        twoNameInput.value = ''
+        twoNameInput.value = '' 
+        twoNameInput.style.display = 'none'
+        twoNameBtn.style.display = 'none'
     }
 })
 
 
 // remove overlay
-var dropDownBtn = document.querySelector('.dropdown-button')
+var themeOptions = document.querySelector('.theme-options')
 var overlay = document.querySelector('.overlay')
-dropDownBtn.addEventListener('click', function (event) {
+themeOptions.addEventListener('click', function (event) {
     // overlay.classList.toggle('overlay-fade')
-    overlay.style.display = 'none'
+    overlay.style.visibility = 'hidden'
 })
 
-var spartaOption = document.querySelector('.sparta-option')
-spartaOption.addEventListener('click', function (event) {
-    document.querySelector('.title').textContent = 'The Peloponnesian War'
+// change theme
+var themeButton = document.querySelector('.change-theme')
+themeButton.addEventListener('click', function (event) {
+    overlay.style.visibility = 'visible'
+})
 
-    document.querySelector('body').classList.toggle('sparta')
-    document.querySelector('.title').classList.toggle('sparta')
-    document.querySelector('.game-grid').classList.toggle('sparta')
-    for (var i = 0; i < gridBoxes.length; i++) {
-        gridBoxes[i].classList.toggle('sparta')
-    }
+// var themeClassList = 
+
+
+// normal theme
+var themesList = ['sparta']
+var normalTheme = document.querySelector('.norml-theme')
+normalTheme.addEventListener('click', function (event) {
+    // for (var i = 0; i < classesArray.length; i++) {
+    //     for (var j = 0; j < themesList.length; j++) {
+    //         document.querySelector(classesArray[i]).classList.remove(themesList[j])
+    //     }
+        
+    // }
+    // document.querySelector('body').classList.remove('sparta')
+})
+
+// refresh page
+var refreshBtn = document.querySelector('.refresh-button')
+refreshBtn.addEventListener('click', function (event) {
+    document.location.reload(true)
 })
