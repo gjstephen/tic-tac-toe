@@ -136,20 +136,14 @@ main {
     color: white;
 }
 
-.overlay.overlay-fade {
-    animation: fadeOut 4s forwards;
-    -webkit-animation: fadeOut 2s forwards;
-    -moz-animation: fadeOut 2s forwards;
-    -o-animation: fadeOut 2s forwards;
-    -ms-animation: fadeOut 2s forwards;
-  }
-  
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-        /* display: none; */
-    }
+footer {
+    margin: 0 2rem;
+}
+
+.about-message {
+    visibility: hidden;
+}
+
+.about-me:hover .about-message{
+    visibility: visible;
 }

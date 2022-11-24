@@ -1,7 +1,7 @@
 body.sparta {
     background-color: #F7F7F7;
     margin: 0;
-    font-family: 'Gaegu', cursive;
+    font-family: 'dominicanregular';
 }
 
 .title.sparta {
@@ -166,4 +166,14 @@ body.sparta {
 .p1-name-btn.sparta:hover .d-one-options.sparta,
 .p2-name-btn.sparta:hover .d-two-options.sparta{
     display: block;
+}
+
+
+@font-face {
+    font-family: 'dominicanregular';
+    src: url('../fonts/webfontkit-dominican/dominica-webfont.woff2') format('woff2'),
+         url('../fonts/webfontkit-dominican/dominica-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
 }

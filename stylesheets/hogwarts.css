@@ -1,10 +1,7 @@
-main.hogwarts {
-    /* background-color: #081027; */
+header.hogwarts {
+    background: none;
 }
 
-header.hogwarts {
-    background: #081027;
-}
 body.hogwarts {
     background-color: #081027;
     margin: 0;
@@ -39,27 +36,6 @@ body.hogwarts {
     font-size: 4rem;
     margin: 0 auto;
 }
-
-/* .header-image-a.hogwarts,
-.header-image-b.hogwarts{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-content: space-around;
-    gap: 0.4rem;
-    height: 100%;
-    max-height: 11rem;
-    max-width: 21rem;
-} */
-
-/* .header-image-a.hogwarts img,
-.header-image-b.hogwarts img{
-    width: 100%;
-    display: inline;
-    margin: auto;
-    justify-content: space-around;
-    
-} */
-
 .player-areas.hogwarts {
     display: flex;
     flex-direction: column;
@@ -70,6 +46,10 @@ body.hogwarts {
 .p1-name-choice.hogwarts,
 .p2-name-choice.hogwarts {
     display: none;
+}
+
+.player-one img {
+    max-height: 412px;
 }
 
 .game-grid.hogwarts {
@@ -106,7 +86,7 @@ body.hogwarts {
 }
 
 .naught-move.hogwarts {
-    background-image: url(/images/HP-scar.png);
+    background-image: url(../images/HP-scar.png);
     /* background-color: #E50032; */
     background-size: 80%;
     background-position: center;
@@ -114,7 +94,7 @@ body.hogwarts {
 }
 
 .cross-move.hogwarts {
-    background-image: url(/images/death-eatersymbol.png);
+    background-image: url(../images/death-eatersymbol.png);
     /* background-color: #007A44; */
     background-size: 30%;
     background-position: center;
