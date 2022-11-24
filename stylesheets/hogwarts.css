@@ -172,8 +172,8 @@ body.hogwarts {
 
 @font-face {
     font-family: 'harry_pregular';
-    src: url('/fonts/webfontkit-harry-potter/harryp__-webfont.woff2') format('woff2'),
-         url('/fonts/webfontkit-harry-potter/harryp__-webfont.woff') format('woff');
+    src: url('../fonts/webfontkit-harry-potter/harryp__-webfont.woff2') format('woff2'),
+         url('../fonts/webfontkit-harry-potter/harryp__-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
