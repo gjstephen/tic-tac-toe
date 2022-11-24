@@ -4,7 +4,7 @@
 }
 
 body {
-    background: rgb(178, 224, 253);
+    background-color: rgb(178, 224, 253);
     margin: 0;
 }
 
@@ -15,7 +15,7 @@ header {
     min-height: 8rem;
     max-height: 11rem;
     height: fit-content;
-    background: lightskyblue;
+    background-color: lightskyblue;
     /* text-align: center; */
 }
 

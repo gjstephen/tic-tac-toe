@@ -1,14 +1,43 @@
+main.hogwarts {
+    /* background-color: #081027; */
+}
+
+header.hogwarts {
+    background: #081027;
+}
 body.hogwarts {
-    background-color: #F7F7F7;
+    background-color: #081027;
     margin: 0;
     font-family: 'harry_pregular';
+    background-image: url(../images/hogwarts-castle-.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 120%;
+    color: yellow
 }
 
 .title.hogwarts {
-    font-size: 4rem;
+    font-size: 4.5rem;
+    text-align: center;
+    margin: 1rem auto;
+
 }
 
-.header-image-a.hogwarts,
+
+.player-one.hogwarts img,
+.player-two.hogwarts img {
+    /* position: absolute; */
+    width: 80%;
+    margin: 0 auto; 
+}
+
+.p1-name-text.hogwarts,
+.p2-name-text.hogwarts {
+    font-size: 4rem;
+    margin: 0 auto;
+}
+
+/* .header-image-a.hogwarts,
 .header-image-b.hogwarts{
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,22 +46,28 @@ body.hogwarts {
     height: 100%;
     max-height: 11rem;
     max-width: 21rem;
-}
+} */
 
-.header-image-a.hogwarts img,
+/* .header-image-a.hogwarts img,
 .header-image-b.hogwarts img{
     width: 100%;
-    /* height: 100%; */
     display: inline;
     margin: auto;
-    /* margin: auto 0 auto auto; */
     justify-content: space-around;
     
-}
-/* 
-.header-image-b.hogwarts img{
-    width: 60%;
 } */
+
+.player-areas.hogwarts {
+    display: flex;
+    flex-direction: column;
+    /* align-content: center; */
+    gap: 0px;
+}
+
+.p1-name-choice.hogwarts,
+.p2-name-choice.hogwarts {
+    display: none;
+}
 
 .game-grid.hogwarts {
     background-image: url(../images/parchment_backgrounda.png);
@@ -69,7 +104,7 @@ body.hogwarts {
 
 .naught-move.hogwarts {
     background-image: url(/images/HP-scar.png);
-    background-color: #E50032;
+    /* background-color: #E50032; */
     background-size: 80%;
     background-position: center;
     background-repeat: no-repeat;
@@ -77,97 +112,20 @@ body.hogwarts {
 
 .cross-move.hogwarts {
     background-image: url(/images/death-eatersymbol.png);
-    background-color: #007A44;
+    /* background-color: #007A44; */
     background-size: 30%;
     background-position: center;
     background-repeat: no-repeat;
 }
 
-.p1-name-btn.hogwarts,
-.p2-name-btn.hogwarts {
-    background-color: rgb(97, 166, 239);
-    border: none;
-    border-radius: 5px;
-    height: 2rem;
-}
-
-.p1-name-btn.hogwarts {
-    background-color: rgb(221, 91, 91);
-}
-
-.p2-name-btn.hogwarts {
-    background-color: rgb(97, 166, 239);
+.p1-name-input.hogwarts,
+.p2-name-input.hogwarts {
+    visibility: hidden;
 }
 
 .dropdown-one.hogwarts,
 .dropdown-two.hogwarts {
-    width: fit-content;
-    /* text-align: center;
-    justify-content: center; */
-    margin: auto;
-    width: 10rem;
-    background-color: #F7F7F7;
-}
-
-.dropdown-two:hover .p2-name-btn.hogwarts{
-    background-color: rgba(50, 92, 133, 0.616);
-}
-
-.dropdown-one:hover .p1-name-btn.hogwarts{
-    background-color: rgba(196, 58, 58, 0.616);
-}
-
-.d-one-menu,
-.d-two-menu {
-    /* display: none; */
     visibility: hidden;
-    position: absolute;
-    /* min-width: 4rem; */
-    margin: 0 auto;
-    justify-content: center;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    z-index: 1;
-    width: inherit ;
-}
-
-.dropdown-one:hover .d-one-menu,
-.dropdown-two:hover .d-two-menu{
-    /* display: block; */
-    /* display: flex; */
-    visibility: visible;
-    flex-direction: column;
-    justify-content: center;
-    gap: 0.2rem;
-    /* margin: 0 auto; */
-}
-
-.d-one-options.hogwarts {
-    background-color: rgb(221, 85, 85);
-}
-
-.d-two-options.hogwarts {
-    background-color: rgb(121, 181, 247);
-}
-.d-one-options.hogwarts,
-.d-two-options.hogwarts {
-    display: block;
-    /* position: relative; */
-    border-radius: 5px;
-    height: 2rem;
-    margin: 2px;
-}
-
-.d-one-options.hogwarts:hover {
-    background-color: rgb(198, 47, 47);
-}
-
-.d-two-options.hogwarts:hover {
-    background-color: rgb(81, 160, 244);
-}
-
-.p1-name-btn.hogwarts:hover .d-one-options.hogwarts,
-.p2-name-btn.hogwarts:hover .d-two-options.hogwarts{
-    display: block;
 }
 
 @font-face {
