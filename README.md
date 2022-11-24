@@ -24,14 +24,17 @@ How to play:
 # :rocket: Cool Tech
 - HTML, CSS, JS
 - DOM manipulation to alter web page
+- overlay allowing the ability to switch themes
 
 # :scream: Bugs to fix :poop:
-- Anything a little broken
-- Anything a LOT broken
-- Buttons to not click too many times (cause its broken :unamused:)
+- the page needs to be refreshed before swapping themes, otherwise they mix together
 
 # :sob: Lessons learnt
 What I would do differently if I could wind back the clock...
 
 # :white_check_mark: Future features
-Cool things I would add if I can keep working on this
+- I would like to add more themes
+- Fix the ability to swap themes without needing to refresh the webpage
+- add media queries to reformat the page on different browser sizes
+- add audio clips to play on rounds run
+- perhaps add some transitions/animations
