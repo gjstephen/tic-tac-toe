@@ -5,36 +5,41 @@ var dTwoMenu = document.querySelector('.d-two-menu')
 
 // hogwarts theme event listener
 hogwartsOption.addEventListener('click', function (event) {
+    removeThemeClass()
     hogwartsTextContent()
-    hogwartsClassToggle()
+    // hogwartsClassToggle()
     hogwartsImages()
+    // classToggle('hogwarts')
+    addThemeClass('hogwarts')
 })
 
-function hogwartsClassToggle() {
-    for (var i = 0; i < gridBoxes.length; i++) {
-        gridBoxes[i].classList.toggle('hogwarts')
-    }
+// function hogwartsClassToggle() {
+//     for (var i = 0; i < gridBoxes.length; i++) {
+//         gridBoxes[i].classList.toggle('hogwarts')
+//     }
 
-    document.querySelector('body').classList.toggle('hogwarts')
-    document.querySelector('header').classList.toggle('hogwarts')
-    document.querySelector('.title').classList.toggle('hogwarts')
-    document.querySelector('.game-grid').classList.toggle('hogwarts')
-    document.querySelector('.p1-name-btn').classList.toggle('hogwarts')
-    document.querySelector('.p2-name-btn').classList.toggle('hogwarts')
-    document.querySelector('.header-image-a').classList.toggle('hogwarts')
-    document.querySelector('.header-image-b').classList.toggle('hogwarts')
-    document.querySelector('.dropdown-one').classList.toggle('hogwarts')
-    document.querySelector('.dropdown-two').classList.toggle('hogwarts')
-    document.querySelector('.p1-name-input').classList.toggle('hogwarts')
-    document.querySelector('.p2-name-input').classList.toggle('hogwarts')
-    document.querySelector('.p1-name-choice').classList.toggle('hogwarts')
-    document.querySelector('.p2-name-choice').classList.toggle('hogwarts')
-    document.querySelector('.player-one').classList.toggle('hogwarts')
-    document.querySelector('.player-two').classList.toggle('hogwarts')
-    document.querySelector('.p1-name-text').classList.toggle('hogwarts')
-    document.querySelector('.p2-name-text').classList.toggle('hogwarts')
-    dOneMenu.classList.toggle('hogwarts')
-}
+//     document.querySelector('body').classList.toggle('hogwarts')
+//     document.querySelector('header').classList.toggle('hogwarts')
+//     document.querySelector('.title').classList.toggle('hogwarts')
+//     document.querySelector('.game-grid').classList.toggle('hogwarts')
+//     document.querySelector('.p1-name-btn').classList.toggle('hogwarts')
+//     document.querySelector('.p2-name-btn').classList.toggle('hogwarts')
+//     document.querySelector('.header-image-a').classList.toggle('hogwarts')
+//     document.querySelector('.header-image-b').classList.toggle('hogwarts')
+//     document.querySelector('.dropdown-one').classList.toggle('hogwarts')
+//     document.querySelector('.dropdown-two').classList.toggle('hogwarts')
+//     document.querySelector('.p1-name-input').classList.toggle('hogwarts')
+//     document.querySelector('.p2-name-input').classList.toggle('hogwarts')
+//     document.querySelector('.p1-name-choice').classList.toggle('hogwarts')
+//     document.querySelector('.p2-name-choice').classList.toggle('hogwarts')
+//     document.querySelector('.player-one').classList.toggle('hogwarts')
+//     document.querySelector('.player-two').classList.toggle('hogwarts')
+//     document.querySelector('.p1-name-text').classList.toggle('hogwarts')
+//     document.querySelector('.p2-name-text').classList.toggle('hogwarts')
+//     dOneMenu.classList.toggle('hogwarts')
+// }
+
+
 
 var classesArray = ['.title', '.game-grid', '.p1-name-btn', '.p2-name-btn', '.d-one-options', '.d-two-options']
 

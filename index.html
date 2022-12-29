@@ -13,11 +13,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Gaegu&display=swap" rel="stylesheet">
 
-    <script defer src="./script.js"></script>
-    <script defer src="./scripts/sparta.js"></script>
-    <script defer src="./scripts/hogwarts.js"></script>
 </head>
-<body>
+<body class="theme">
     <div class="overlay">
         <h1>Welcome to my tic tac toe game!</h1>
         <h1>Choose your theme.</h1>
@@ -29,21 +26,21 @@
         </div>
     </div>
 
-    <header>
-        <div class="header-image-a"></div>
-        <h1 class="title">tic tac toe</h1>
-        <div class="header-image-b"></div>
+    <header class="theme">
+        <div class="header-image-a theme"></div>
+        <h1 class="title theme">tic tac toe</h1>
+        <div class="header-image-b theme"></div>
     </header>
 
     <main>
-        <aside class="player-areas player-one">
-            <h3 class="player-names p1-name-text">Player One</h3>
+        <aside class="player-areas player-one theme">
+            <h3 class="player-names p1-name-text theme">Player One</h3>
 
-            <div class="p1-name-choice">
-                <input type="text" placeholder="Input player name" class="p1-name-input">
-                <div class="dropdown-one">
-                    <button class="p1-name-btn">Save</button>
-                    <div class="d-one-menu">
+            <div class="p1-name-choice theme">
+                <input type="text" placeholder="Input player name" class="p1-name-input theme">
+                <div class="dropdown-one theme">
+                    <button class="p1-name-btn theme">Save</button>
+                    <div class="d-one-menu theme">
                     </div>
                 </div>
             </div>
@@ -57,16 +54,16 @@
                 <h3 class="round-display">Round: <span class="round-tally">1</span></h3>
             </section>
 
-            <section class="game-grid">
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
-                <div class="grid-box"></div>
+            <section class="game-grid theme">
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
+                <div class="grid-box theme"></div>
             </section>
 
             <section class="game-turn">
@@ -78,14 +75,14 @@
             </section>
         </section>
 
-        <aside class="player-areas player-two">
-            <h3 class="player-names p2-name-text">Player Two</h3>
+        <aside class="player-areas player-two theme">
+            <h3 class="player-names p2-name-text theme">Player Two</h3>
 
-            <div class="p2-name-choice">
-                <input type="text" placeholder="Input player name" class="p2-name-input">
-                <div class="dropdown-two">
-                    <button class="p2-name-btn">Save</button>
-                    <div class="d-two-menu">
+            <div class="p2-name-choice theme">
+                <input type="text" placeholder="Input player name" class="p2-name-input theme">
+                <div class="dropdown-two theme">
+                    <button class="p2-name-btn theme">Save</button>
+                    <div class="d-two-menu theme">
                     </div>
                 </div>
             </div>
@@ -104,5 +101,11 @@
 
         </section>
     </footer>
+
+
+    <script defer src="./script.js"></script>
+    <script defer src="./scripts/sparta.js"></script>
+    <script defer src="./scripts/hogwarts.js"></script> 
+    <script src="./scripts/classToggle.js"></script>   
 </body>
 </html>
