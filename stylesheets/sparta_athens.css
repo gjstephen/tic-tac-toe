@@ -9,7 +9,7 @@ body.sparta {
 }
 
 .header-image-a.sparta,
-.header-image-b.sparta{
+.header-image-b.sparta {
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-content: space-around;
@@ -19,16 +19,30 @@ body.sparta {
     max-width: 21rem;
 }
 
-.header-image-a.sparta img,
-.header-image-b.sparta img{
-    width: 100%;
-    /* height: 100%; */
+.outside-img.sparta,
+.inside-img.sparta {
     display: inline;
     margin: auto;
-    /* margin: auto 0 auto auto; */
+    width: 100%;
+    height: 100%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     justify-content: space-around;
+    max-height: 11rem;
+    max-width: 21rem;
     
 }
+
+.outside-img.sparta{
+    background-image: url(../images/laurel-wreath.png);
+    /* background-color: white; */
+}
+
+.inside-img.sparta {
+    background-image: url(../images/evil-eye.png);
+}
+
 /* 
 .header-image-b.sparta img{
     width: 60%;
@@ -97,6 +111,11 @@ body.sparta {
     background-color: rgb(97, 166, 239);
 }
 
+.p1-name-input,
+.p2-name-input {
+    display: none;
+}
+
 .dropdown-one.sparta,
 .dropdown-two.sparta {
     width: fit-content;
@@ -115,21 +134,8 @@ body.sparta {
     background-color: rgba(196, 58, 58, 0.616);
 }
 
-.d-one-menu,
-.d-two-menu {
-    /* display: none; */
-    visibility: hidden;
-    position: absolute;
-    /* min-width: 4rem; */
-    margin: 0 auto;
-    justify-content: center;
-    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
-    z-index: 1;
-    width: inherit ;
-}
-
-.dropdown-one:hover .d-one-menu,
-.dropdown-two:hover .d-two-menu{
+.dropdown-one:hover .d-one-menu.sparta,
+.dropdown-two:hover .d-two-menu.sparta{
     /* display: block; */
     /* display: flex; */
     visibility: visible;

@@ -5,33 +5,43 @@ var dTwoMenu = document.querySelector('.d-two-menu')
 
 // sparta theme event listener
 spartaOption.addEventListener('click', function (event) {
+    removeThemeClass()
+    addThemeClass('sparta')
     spartaTextContent()
-    spartaClassToggle()
-    spartaNames()
-    spartaImages()
+    // spartaClassToggle()
+    // spartaNames()
+    // spartaImages()
 })
 
-function spartaClassToggle() {
-    for (var i = 0; i < gridBoxes.length; i++) {
-        gridBoxes[i].classList.toggle('sparta')
-    }
+// function spartaClassToggle() {
+//     for (var i = 0; i < gridBoxes.length; i++) {
+//         gridBoxes[i].classList.toggle('sparta')
+//     }
 
-    document.querySelector('body').classList.toggle('sparta')
-    document.querySelector('.title').classList.toggle('sparta')
-    document.querySelector('.game-grid').classList.toggle('sparta')
-    document.querySelector('.p1-name-btn').classList.toggle('sparta')
-    document.querySelector('.p2-name-btn').classList.toggle('sparta')
-    document.querySelector('.header-image-a').classList.toggle('sparta')
-    document.querySelector('.header-image-b').classList.toggle('sparta')
-    document.querySelector('.dropdown-one').classList.toggle('sparta')
-    document.querySelector('.dropdown-two').classList.toggle('sparta')
-    dOneMenu.classList.toggle('sparta')
-}
+//     document.querySelector('body').classList.toggle('sparta')
+//     document.querySelector('.title').classList.toggle('sparta')
+//     document.querySelector('.game-grid').classList.toggle('sparta')
+//     document.querySelector('.p1-name-btn').classList.toggle('sparta')
+//     document.querySelector('.p2-name-btn').classList.toggle('sparta')
+//     document.querySelector('.header-image-a').classList.toggle('sparta')
+//     document.querySelector('.header-image-b').classList.toggle('sparta')
+//     document.querySelector('.dropdown-one').classList.toggle('sparta')
+//     document.querySelector('.dropdown-two').classList.toggle('sparta')
+//     dOneMenu.classList.toggle('sparta')
+// }
 
 var classesArray = ['.title', '.game-grid', '.p1-name-btn', '.p2-name-btn', '.d-one-options', '.d-two-options']
 
 function spartaTextContent() {
-document.querySelector('.title').textContent = 'The Peloponnesian War'
+    document.querySelector('.title').textContent = 'The Peloponnesian War'
+    oneNameBtn.textContent = 'Choose a name'
+    twoNameBtn.textContent = 'Choose a name'
+
+    pOneName = 'Spartan Soldier'
+    oneNameText.textContent = pOneName
+    pTwoName = 'Athenian Soldier'
+    twoNameText.textContent = pTwoName
+    turnDisplay.textContent = `${pOneName}'s Turn`
 }
 
 // var oneNameInput = document.querySelector('.p1-name-input')
@@ -44,17 +54,7 @@ var namesList = {
 
 function spartaNames() {
     oneNameInput.style.display = 'none'
-    oneNameBtn.textContent = 'Choose a name'
-    twoNameInput.style.display = 'none'
-    twoNameBtn.textContent = 'Choose a name'
-
-    pOneName = 'Spartan Soldier'
-    oneNameText.textContent = pOneName
-    pTwoName = 'Athenian Soldier'
-    twoNameText.textContent = pTwoName
-    turnDisplay.textContent = `${pOneName}'s Turn`
-
-
+    
     for (var i = 0; i < namesList.sparta.length; i++) {
        var name = document.createElement('p')
        name.textContent = namesList.sparta[i]

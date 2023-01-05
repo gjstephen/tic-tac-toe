@@ -24,13 +24,26 @@ body.hogwarts {
     font-size: 2.5rem;;
 }
 
-.player-one.hogwarts img,
-.player-two.hogwarts img {
+/* PLAYER SECTIONS */
+
+.player-one .player-imghogwarts,
+.player-two .player-img.hogwarts {
     /* position: absolute; */
     width: 80%;
-    margin: 0 auto; 
+    height: 100%;
+    margin: 0 auto;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+.player-one .player-imghogwarts {
+    background-image: url(../images/harry-potter-image.png);
+}
+
+.player-two .player-imghogwarts {
+    background-image: url(../images/voldemort-image.png);
+}
 .p1-name-text.hogwarts,
 .p2-name-text.hogwarts {
     font-size: 4rem;

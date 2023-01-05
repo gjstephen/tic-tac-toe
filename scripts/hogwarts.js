@@ -8,7 +8,7 @@ hogwartsOption.addEventListener('click', function (event) {
     removeThemeClass()
     hogwartsTextContent()
     // hogwartsClassToggle()
-    hogwartsImages()
+    // hogwartsImages()
     // classToggle('hogwarts')
     addThemeClass('hogwarts')
 })

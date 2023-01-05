@@ -26,9 +26,9 @@ header h1 {
 }
 
 main {
-    display: flex;
+    /* display: flex; */
     text-align: center;
-    justify-content: space-around;
+    /* justify-content: space-around; */
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 0 auto;
@@ -36,6 +36,8 @@ main {
     align-items: center;
     max-width: 1200px;
 }
+
+/* PLAYER SECTIONS */
 
 .player-areas {
     display: grid;
@@ -50,9 +52,25 @@ main {
     background-color: rgb(178, 224, 253);
 }
 
+
+.d-one-menu,
+.d-two-menu {
+    /* display: none; */
+    visibility: hidden;
+    position: absolute;
+    /* min-width: 4rem; */
+    margin: 0 auto;
+    justify-content: center;
+    /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+    z-index: 1;
+    width: inherit ;
+}
+
 .player-names {
     font-size: 2rem;
 }
+
+/* GAME GRID */
 
 .game-grid {
     display: grid;
@@ -92,6 +110,8 @@ main {
     background-position: center;
     background-repeat: no-repeat;
 }
+
+/* DISPLAYS */
 
 .turn-display {
     margin: 2rem auto;
